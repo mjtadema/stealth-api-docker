@@ -5,3 +5,20 @@ services:
     ports:
       - 8080:8080
     restart: unless-stopped
+  
+  caddy:
+    container_name: caddy
+    image: caddy
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

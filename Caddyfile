@@ -1,0 +1,3 @@
+stealth.[ your domain ] {
+    reverse_proxy stealth:8080
+}

@@ -1,0 +1,7 @@
+services:
+  stealth:
+    image: ghcr.io/mjtadema/stealth-api-docker:latest
+    container_name: stealth
+    ports:
+      - 8080:8080
+    restart: unless-stopped

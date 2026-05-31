@@ -26,7 +26,8 @@ To provide a little bit better security.
 2. edit `Caddyfile` to include your own domain
 3. make sure you have a stealth.[your domain] dns record
 4. make sure port 443 is forwarded to the machine on which you want to host stealth-api
-5. run `docker compose up -d` to start the service in the background
+5. make sure port 80 is _also_ forwarded to obtain a certificate using the ACME challenge
+6. run `docker compose up -d` to start the service in the background
 
 Caddy then automatically tries to acquire a certificate from lets-encrypt, after which you can add your own stealth-api instance in the stealth settings (settings -> data -> stealth instance).
 
